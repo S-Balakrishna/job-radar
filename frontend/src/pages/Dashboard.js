@@ -164,12 +164,24 @@ export default function Dashboard() {
       if (error) throw error
       setCompanies(prev => [data[0], ...prev])
       setFormName(''); setFormUrl('')
+      // Trigger immediate scrape
+      await fetch(
+        'https://api.github.com/repos/S-Balakrishna/job-radar/actions/workflows/scraper.yml/dispatches',
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.REACT_APP_GH_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ ref: 'main' })
+        }
+      )
     } catch(e) {
       setFormErr(e.message)
     } finally {
       setFormLoading(false)
     }
-  }
 
   const KEYWORDS = ['analyst','data engineer','SQL','BI developer','entry level','fresher','0–2 yrs','new grad','product analyst','associate']
 
