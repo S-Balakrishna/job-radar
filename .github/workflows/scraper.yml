@@ -2,9 +2,13 @@ name: Job Tracker Scraper
 
 on:
   schedule:
-    - cron: '0 */3 * * *'   # Every 3 hours
-  workflow_dispatch:          # Manual trigger anytime from GitHub UI
-
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'Trigger source'
+        required: false
+        default: 'manual'
 jobs:
   scrape:
     runs-on: ubuntu-latest
