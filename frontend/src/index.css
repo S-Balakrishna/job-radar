@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,400;12..96,700;12..96,800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:  #f5f0e8;
+  --paper2: #ede8de;
+  --paper3: #e0d9cc;
+  --ink:    #1a1208;
+  --ink2:   #3d3320;
+  --ink3:   #6b5d44;
+  --red:    #c0392b;
+  --blue:   #1a3a6b;
+  --green:  #1a4a2e;
+  --gold:   #8a6a00;
+}
+
+html, body, #root {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--paper2); }
+::-webkit-scrollbar-thumb { background: var(--ink3); border-radius: 0; }
