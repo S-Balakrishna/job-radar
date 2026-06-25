@@ -182,6 +182,7 @@ export default function Dashboard() {
     } finally {
       setFormLoading(false)
     }
+  }
 
   const KEYWORDS = ['analyst','data engineer','SQL','BI developer','entry level','fresher','0–2 yrs','new grad','product analyst','associate']
 
